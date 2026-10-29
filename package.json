@@ -33,8 +33,11 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "shortcutName": "Ashu Play"
+      "shortcutName": "Ashu Play",
+      "artifactName": "AshuPlay-Setup-${version}.${ext}"
     },
-    "artifactName": "AshuPlay-${version}-${target}.${ext}"
+    "portable": {
+      "artifactName": "AshuPlay-Portable-${version}.${ext}"
+    }
   }
 }
