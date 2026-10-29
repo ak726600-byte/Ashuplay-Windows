@@ -1,0 +1,40 @@
+{
+  "name": "ashu-play",
+  "productName": "Ashu Play",
+  "version": "1.0.0",
+  "description": "Ashu Play - music and video player for Windows",
+  "main": "main.js",
+  "author": "Ashutosh Kumar",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "dependencies": {
+    "youtubei.js": "latest"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.ashu.play",
+    "productName": "Ashu Play",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "src/**/*", "assets/**/*", "package.json"],
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Ashu Play"
+    },
+    "artifactName": "AshuPlay-${version}-${target}.${ext}"
+  }
+}

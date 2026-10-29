@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' file: data: https:; media-src https: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'">
+  <title>Ashu Play</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bg"></div>
+  <div id="dim"></div>
+
+  <aside id="side">
+    <div class="brand"><img src="../assets/logo.png" alt="Ashu Play"><span>Ashu Play</span></div>
+    <nav>
+      <button data-view="home" class="nav active">Home</button>
+      <button data-view="search" class="nav">Search</button>
+      <button data-view="settings" class="nav">Settings</button>
+      <button data-view="about" class="nav">About</button>
+    </nav>
+    <div class="me">
+      <img id="meDp" alt="">
+      <div id="meName"></div>
+    </div>
+  </aside>
+
+  <main>
+    <section id="v-home" class="view active">
+      <h1>Home</h1>
+      <div id="homeStatus" class="status"></div>
+      <div id="homeGrid" class="grid"></div>
+    </section>
+
+    <section id="v-search" class="view">
+      <form id="searchForm" class="searchbar">
+        <input id="q" type="search" placeholder="Gaana, video ya artist search karo" autocomplete="off">
+        <button type="submit" class="primary">Search</button>
+      </form>
+      <div id="searchStatus" class="status"></div>
+      <div id="searchGrid" class="grid"></div>
+    </section>
+
+    <section id="v-settings" class="view">
+      <h1>Settings</h1>
+      <div class="card">
+        <h2>Profile</h2>
+        <div class="row">
+          <img id="setDp" class="dp" alt="">
+          <div class="col">
+            <label>User name</label>
+            <input id="setName" type="text" maxlength="30">
+            <div class="btns">
+              <button id="dpPick">DP badlo</button>
+              <button id="dpReset" class="ghost">Default DP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Wallpaper</h2>
+        <div id="wpPreview" class="wpPreview"></div>
+        <div class="btns">
+          <button id="wpPick">Wallpaper chuno</button>
+          <button id="wpReset" class="ghost">Hatao</button>
+        </div>
+        <label>Wallpaper dimming: <span id="dimVal"></span></label>
+        <input id="dimRange" type="range" min="0" max="90" step="5">
+      </div>
+      <div class="card">
+        <h2>Playback</h2>
+        <label class="check"><input id="audioOnly" type="checkbox"> Sirf audio chalao (data bachta hai)</label>
+      </div>
+    </section>
+
+    <section id="v-about" class="view">
+      <h1>About Ashu Play</h1>
+      <p class="ver">v1.0.0</p>
+      <h3 class="sec">Special thanks</h3>
+      <div class="card center">
+        <img src="../assets/dp.jpg" class="dp big" alt="Ashutosh Kumar">
+        <h2>Ashutosh Kumar</h2>
+        <p class="muted">I'm Ashutosh Kumar. ✨</p>
+        <p class="bio">
+          💻 I build apps and dream beyond limits.<br>
+          🚀 Focused on my goals, not on competing with others.<br>
+          🧠 I believe intelligence is attractive, kindness is powerful, and loyalty is rare.<br>
+          🥂 I enjoy meaningful conversations over meaningless attention.<br>
+          🖤 Still growing, still learning, still becoming the best version of myself.
+        </p>
+      </div>
+      <button class="card link" id="igBtn"><b>Instagram</b><span class="muted">@17__ashu_</span></button>
+      <h3 class="sec">Lead developer</h3>
+      <div class="card"><b>Bittu jii</b></div>
+      <h3 class="sec">App</h3>
+      <div class="card">
+        <b>Changelog</b>
+        <p class="muted">v1.0.0: Windows par pehla release. Search, play, wallpaper, user name aur DP.</p>
+      </div>
+      <h3 class="sec">Legal</h3>
+      <div class="card"><p class="muted">Ashu Play YouTube se affiliated nahi hai. Data youtubei.js (MIT License) se aata hai.</p></div>
+    </section>
+  </main>
+
+  <div id="player" class="mini hidden">
+    <div class="phead">
+      <div class="ptitle"><b id="pTitle"></b><span id="pAuthor" class="muted"></span></div>
+      <button id="pSize" title="Bada / chhota">⤢</button>
+      <button id="pClose" title="Band karo">✕</button>
+    </div>
+    <div id="pStatus" class="status"></div>
+    <video id="media" controls autoplay playsinline></video>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
